@@ -1,0 +1,47 @@
+<div class="col-md-12">
+  <%= form_for @group_event do |f| %>
+      <% if @group_event.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@group_event.errors.count, "error") %> prohibited this group_event from being saved:</h2>
+
+            <ul>
+              <% @group_event.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :location %><br>
+        <%= f.text_field :location, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :start_date %><br>
+        <%= f.text_field :start_date, type: 'date', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :end_date %><br>
+        <%= f.text_field :end_date, type: 'date', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :state %><br>
+        <%= f.select :state, GroupEvent::STATES, {}, class: 'form-control' %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-default  btn-primary pull-right' %>
+      </div>
+  <% end %>
+</div>

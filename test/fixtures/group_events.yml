@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  location: MyString
+  published: false
+  deleted_at: 2017-11-06 00:14:41
+
+two:
+  name: MyString
+  description: MyText
+  location: MyString
+  published: false
+  deleted_at: 2017-11-06 00:14:41

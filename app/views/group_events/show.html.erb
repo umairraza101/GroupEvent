@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Location</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Duration</th>
+    <th>State</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td><%= @group_event.name %></td>
+    <td><%= @group_event.description&.html_safe %></td>
+    <td><%= @group_event.location %></td>
+    <td><%= @group_event.start_date %></td>
+    <td><%= @group_event.end_date %></td>
+    <td><%= duration(@group_event) %></td>
+
+    <td><%= @group_event.state %></td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_group_event_path(@group_event) %> |
+<%= link_to 'Back', group_events_path %>
